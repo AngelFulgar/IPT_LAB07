@@ -55,6 +55,7 @@ builder.Services.AddOpenApi(options =>
 });
 
 var app = builder.Build();
+await app.Services.MigrateAndSeedAsync();
 
 // Seed data
 using (var scope = app.Services.CreateScope())
